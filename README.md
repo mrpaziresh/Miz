@@ -1,4 +1,4 @@
-<a href="https://twitter.com/mrpaziresh" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="mrpaziresh" height="30" width="40" /></a>
+<img align="center" src="[https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg](https://s6.uupload.ir/files/screen_r6bg.png)" alt="mrpaziresh" /></a>
 
 # Miz
 
