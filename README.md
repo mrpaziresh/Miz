@@ -1,3 +1,5 @@
+<a href="https://twitter.com/mrpaziresh" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="mrpaziresh" height="30" width="40" /></a>
+
 # Miz
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
