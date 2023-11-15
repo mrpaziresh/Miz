@@ -1,4 +1,4 @@
-<img src="[https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg]"/></a>
+<a href="https://uupload.ir/view/screen_r6bg.png" target="_blank"><img src="https://s6.uupload.ir/files/screen_r6bg_thumb.png" border="0" alt="آپلود عکس" /></a>
 
 # Miz
 
