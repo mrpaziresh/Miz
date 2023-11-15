@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Kalameh;
+  color: #fff;
+  position: absolute;
+  left: 1008px;
+  top: 450px;
+}
+
+.container {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.31);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  box-shadow: 0 10px 15px 15px rgba(126, 126, 126, 0.5);
+}
+
+.container .days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .day {
+  font-size: 85%;
+}
+.container p {
+  display: inline;
+  margin-left: 65px;
+}
+.container p span {
+  margin: 20px;
+  font-size: 20px;
+}
+.container .day,
+.container .number,
+.container .number-pre {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+.container .number-pre {
+  color: rgba(238, 238, 238, 0.4);
+}
+.container .number:hover,
+.container .number-pre:hover {
+  border: 2px solid rgba(238, 238, 238, 0.4);
+}
+.container .data {
+  width: 300px;
+  padding: 25px;
+}
+.container .number.active {
+  background: rgb(73, 73, 247);
+}
+.container h3 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 15px 30px;
+  display: inline;
+}
+
+.container .image {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.container img {
+  height: 500px;
+  padding: 30px;
+  position: absolute;
+  right: 350px;
+}

@@ -1,0 +1,77 @@
+.p {
+  font-size: 18px;
+  font-family: Kalameh;
+  color: rgb(63, 63, 63);
+  float: right;
+}
+.container-box {
+  width: 165px;
+  height: 218px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  border-radius: 20px;
+  z-index: -1;
+}
+.imagebanner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.imagebanner img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.nameandtemp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cityname {
+  color: white;
+  font-size: 20px;
+}
+.temp {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.warmtemp img {
+  display: flex;
+  width: 25px;
+  height: 25px;
+}
+.coldtemp img {
+  display: flex;
+  width: 22px;
+  height: 22px;
+}
+.warmtemp {
+  position: absolute;
+  right: 20px;
+  top: 160px;
+  color: white;
+  font-size: 14px;
+}
+.coldtemp {
+  position: absolute;
+  top: 163px;
+  left: 20px;
+  color: white;
+  font-size: 14px;
+}

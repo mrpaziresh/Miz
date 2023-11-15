@@ -1,0 +1,18 @@
+<div class="container">
+  <i class="fa-solid fa-sun"></i>
+  <div class="row" style="font-size: 32px; margin-top: 5px">
+    {{ weatherdata.temp_celcius }}°
+  </div>
+  <div class="row" style="font-size: 25px; margin-top: 0px">تهران</div>
+
+  <div class="weatherbox">
+    <div class="coldtemp">
+      <img src="./assets/cold.png" alt="cold" />
+      {{ weatherdata.temp_min }}°C
+    </div>
+    <div class="warmtemp">
+      <img class="warmtemp1" src="./assets/warm.png" alt="warm" />
+      {{ weatherdata.temp_max }}°C
+    </div>
+  </div>
+</div>

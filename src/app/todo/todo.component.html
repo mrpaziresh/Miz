@@ -1,0 +1,54 @@
+<div dir="rtl" class="container">
+  <h1>دست نویس</h1>
+  <hr />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">تسک ها</th>
+        <th scope="col">وضعیت</th>
+        <th scope="col">حذف کردن</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of taskArray; index as i">
+        <td>{{ t.taskName }}</td>
+        <td><input (change)="onCheck(i)" id="myCheckbox" type="checkbox" /></td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="onDelete(i)">
+            پاک کردن
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        style="border-color: rgb(219, 219, 219)"
+        id="task"
+        placeholder="تسک جدید بنویسید"
+        ngModel
+        name="task"
+        required
+      />
+      <small
+        *ngIf="taskForm.invalid && taskForm.dirty"
+        id="errorMessage"
+        class="form-text text-danger"
+        >حتما باید یه چیزی بنویسید</small
+      >
+    </div>
+
+    <button
+      [disabled]="taskForm.invalid"
+      id="submitButton"
+      type="submit"
+      class="btn btn-primary"
+    >
+      اضافه کردن
+    </button>
+  </form>
+</div>

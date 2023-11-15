@@ -1,0 +1,70 @@
+.container {
+  padding-left: 300px;
+}
+body {
+  background-color: blueviolet;
+  width: 100%;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.p {
+  font-size: 40px;
+}
+
+.log {
+  font-size: 40px;
+  float: right;
+}
+.container-box {
+  position: absolute;
+  top: 60px;
+}
+.gsearch {
+  position: absolute;
+  top: 60px;
+  margin-left: 190px;
+}
+
+.weather {
+  position: absolute;
+  top: 100px;
+}
+
+.avatar {
+  position: relative;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.status {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+}
+
+.todo {
+  position: absolute;
+  top: 180px;
+  margin-left: 185px;
+}
+
+.clock {
+  position: absolute;
+  top: 50px;
+}
+
+.calend {
+  position: absolute;
+  top: 170px;
+}

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  /* background-color: rgb(213, 228, 255); */
+  background-image: url(./assets/mountain.jpg);
+
+  border-radius: 20px;
+  font-family: kalameh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weathercard {
+  padding-right: 900px;
+  padding-top: 50px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
