@@ -1,6 +1,6 @@
 # Miz - Personal Assistant in your new tab
 
-![Alt image](https://s6.uupload.ir/files/screen_r6bg.png)
+![Alt image](https://s6.uupload.ir/files/screen_r6bg_ul82.png)
 
 “I am your assistant. Here to help in the noisy world of the Internet, the necessary tools are always at hand so that your time and money are not wasted."
 Assistant is the most useful extension for Google Chrome that opens on your new tabs like a tidy and beautiful desktop
