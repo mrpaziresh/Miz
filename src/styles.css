@@ -4,7 +4,7 @@ body {
   background-image: url(./assets/mountain.jpg);
 
   border-radius: 20px;
-  font-family: kalameh;
+  font-family: 'Dana', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,5 +21,25 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Dana', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'Dana';
+  src: url('assets/fonts/Dana/Dana-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('assets/fonts/Dana/Dana-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+h1 {
+  font-family: 'Dana', sans-serif;
 }

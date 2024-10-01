@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: kalameh;
+  font-family: 'Dana', sans-serif;
   border: 0;
   outline: none;
   position: absolute;
@@ -31,7 +31,7 @@
 
 ::placeholder {
   color: #5f5f5f;
-  font-family: kalameh;
+  font-family: 'Dana', sans-serif;
   margin-right: 5px;
 }
 .glogo {

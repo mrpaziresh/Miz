@@ -6,14 +6,14 @@
   background-image: "../assets/night-cold.jpg" center/cover no-repeat;
 
   color: white;
-  font-family: kalameh;
+  font-family: 'Dana', sans-serif;
 }
 
 .row {
   display: block;
   margin: 0 auto;
   width: fit-content;
-  font-family: kalameh;
+  font-family: 'Dana', sans-serif;
   margin-top: 40px;
 }
 .imagebanner {

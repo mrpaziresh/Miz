@@ -1,8 +1,9 @@
 .p {
   font-size: 18px;
-  font-family: Kalameh;
+  font-family: 'Dana', sans-serif;
   color: rgb(63, 63, 63);
   float: right;
+  font-family: 'Dana', sans-serif;
 }
 .container-box {
   width: 165px;
