@@ -1,45 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  /* background-color: rgb(213, 228, 255); */
-  background-image: url(./assets/mountain.jpg);
-
-  border-radius: 20px;
-  font-family: 'Dana', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.weathercard {
-  padding-right: 900px;
-  padding-top: 50px;
-}
-
 html,
 body {
-  height: 100%;
-}
-body {
   margin: 0;
-  font-family: 'Dana', sans-serif;
+  min-height: 100%;
 }
 
-
-@font-face {
-  font-family: 'Dana';
-  src: url('assets/fonts/Dana/Dana-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+body {
+  min-height: 100vh;
+  background: #0d1b2a url(./assets/mountain.jpg) center top / cover no-repeat;
+  font-family: 'Roboto', sans-serif;
 }
 
-@font-face {
-  font-family: 'Dana';
-  src: url('assets/fonts/Dana/Dana-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
+* {
+  box-sizing: border-box;
 }
-
 
 h1 {
-  font-family: 'Dana', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }

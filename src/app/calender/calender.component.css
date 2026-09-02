@@ -1,19 +1,17 @@
+:host {
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Dana', sans-serif;
-  color: #fff;
-  position: absolute;
-  left: 1008px;
-  top: 450px;
-}
-
 .container {
   /* From https://css.glass */
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
   background: rgba(255, 255, 255, 0.31);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -30,19 +28,12 @@ body {
 .container .day {
   font-size: 85%;
 }
-.container p {
-  display: inline;
-  margin-left: 65px;
-}
-.container p span {
-  margin: 20px;
-  font-size: 20px;
-}
 .container .day,
 .container .number,
 .container .number-pre {
-  height: 45px;
-  width: 45px;
+  height: 33px;
+  width: 33px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,28 +47,48 @@ body {
   border: 2px solid rgba(238, 238, 238, 0.4);
 }
 .container .data {
-  width: 300px;
-  padding: 25px;
+  /* 7 columns x 33px = 231px of content, plus 14px padding on each side */
+  width: 259px;
+  max-width: 100%;
+  padding: 14px;
 }
 .container .number.active {
   background: rgb(73, 73, 247);
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
 .container h3 {
-  font-size: 25px;
-  font-weight: 700;
-  margin: 0 15px 30px;
-  display: inline;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
 }
 
-.container .image {
-  position: absolute;
-  top: 0;
-  right: 0;
+.nav {
+  display: flex;
+  gap: 6px;
 }
 
-.container img {
-  height: 500px;
-  padding: 30px;
-  position: absolute;
-  right: 350px;
+.nav-btn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }

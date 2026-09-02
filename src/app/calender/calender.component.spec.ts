@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
 
 import { CalenderComponent } from './calender.component';
 
@@ -8,7 +9,8 @@ describe('CalenderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CalenderComponent]
+      declarations: [CalenderComponent],
+      imports: [CommonModule],
     });
     fixture = TestBed.createComponent(CalenderComponent);
     component = fixture.componentInstance;

@@ -1,0 +1,3 @@
+# Build output committed for GitHub Pages hosting — not hand-written source,
+# so exclude it from the repo's language statistics.
+docs/** linguist-generated=true

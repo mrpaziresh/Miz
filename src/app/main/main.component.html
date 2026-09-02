@@ -1,18 +1,48 @@
-<div class="container">
-  <i class="fa-solid fa-sun"></i>
-  <div class="row" style="font-size: 32px; margin-top: 5px">
-    {{ weatherdata.temp_celcius }}°
-  </div>
-  <div class="row" style="font-size: 25px; margin-top: 0px; font-family: 'Dana', sans-serif;">تهران</div>
+<div class="weather-card">
+  <div class="weather-top">
+    <button
+      type="button"
+      class="city-btn"
+      *ngIf="!editingCity"
+      (click)="startEdit()"
+      title="Change location"
+    >
+      <i class="fa-solid fa-location-dot"></i>
+      <span>{{ cityName || 'Set location' }}</span>
+    </button>
 
-  <div class="weatherbox">
-    <div class="coldtemp">
-      <img src="./assets/cold.png" alt="cold" />
-      {{ weatherdata.temp_min }}°C
+    <div class="city-search" *ngIf="editingCity">
+      <input
+        type="text"
+        class="city-input"
+        placeholder="Search city…"
+        [(ngModel)]="query"
+        (ngModelChange)="onQueryChange($event)"
+        (keyup.escape)="cancelEdit()"
+        autocomplete="off"
+        autofocus
+      />
+      <ul class="city-results" *ngIf="results.length">
+        <li *ngFor="let r of results" (click)="selectCity(r)">
+          {{ r.name }}<span *ngIf="r.country">, {{ r.country }}</span>
+        </li>
+      </ul>
     </div>
-    <div class="warmtemp">
-      <img class="warmtemp1" src="./assets/warm.png" alt="warm" />
-      {{ weatherdata.temp_max }}°C
+  </div>
+
+  <div class="weather-main" *ngIf="!loading; else loadingState">
+    <i class="weather-icon" [ngClass]="iconClass"></i>
+    <span class="temp" *ngIf="temperature !== null">{{ temperature }}°</span>
+    <span class="temp temp--empty" *ngIf="temperature === null">--</span>
+  </div>
+  <ng-template #loadingState>
+    <div class="weather-main weather-main--loading">
+      <i class="fa-solid fa-spinner fa-spin"></i>
     </div>
+  </ng-template>
+
+  <div class="weather-range" *ngIf="!loading && tempMin !== null && tempMax !== null">
+    <span><i class="fa-solid fa-arrow-down"></i> {{ tempMin }}°</span>
+    <span><i class="fa-solid fa-arrow-up"></i> {{ tempMax }}°</span>
   </div>
 </div>

@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.link {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-2px);
+}

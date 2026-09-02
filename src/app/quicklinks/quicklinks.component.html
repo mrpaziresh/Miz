@@ -1,0 +1,12 @@
+<div class="links">
+  <a
+    class="link"
+    *ngFor="let link of links"
+    [href]="link.url"
+    target="_blank"
+    rel="noopener"
+    [title]="link.name"
+  >
+    <i [class]="link.icon"></i>
+  </a>
+</div>

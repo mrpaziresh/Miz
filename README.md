@@ -1,45 +1,116 @@
-# Miz - Personal Assistant in your new tab
+<div align="center">
 
-![Alt image](https://s6.uupload.ir/files/screen_r6bg_ul82.png)
-
-“I am your assistant. Here to help in the noisy world of the Internet, the necessary tools are always at hand so that your time and money are not wasted."
-Assistant is the most useful extension for Google Chrome that opens on your new tabs like a tidy and beautiful desktop
-
-
-## Technologies
-**The Recommender System / Sentiment Analysis:**
-- Angular - framework for building client applications
-- TypeScript -  improves the developer experience
-- Nodejs  - designed to build scalable network applications
-- HTML5/CSS3   -  to create a web page and web applications
-- Figma - Design creative UI for make better user experience
-
-
+<img src="src/Miz.png" alt="Miz logo" width="96" />
 
 # Miz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+**A calm, personal dashboard for your browser's new tab.**
 
-## Development server
+Weather, clock, calendar, checklist, quick links and search — all in one glanceable, glassy screen.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[![Angular](https://img.shields.io/badge/Angular-16-DD0031?logo=angular&logoColor=white)](https://angular.io)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.1-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Open-Meteo](https://img.shields.io/badge/Weather-Open--Meteo-4CAF50)](https://open-meteo.com)
+[![No API key required](https://img.shields.io/badge/API%20key-not%20required-success)](#-weather--location)
 
-## Code scaffolding
+<img src="screenshots/dashboard.png" alt="Miz dashboard screenshot" width="820" />
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+</div>
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✨ What is Miz
 
-## Running unit tests
+Miz replaces the blank new-tab page with a single, organized screen: the things you glance at every day — the time, the weather, today's date, your shortlist of tasks — arranged in one clean layout instead of scattered across a dozen tabs and apps.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+No accounts, no tracking, no cloud sync. Everything you add lives in your browser's own storage.
 
-## Running end-to-end tests
+## 🧩 Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| | |
+|---|---|
+| 🌤️ **Live weather** | Auto-detects your location from your IP address on first load — or search any city by name and pin it. Shows current temperature plus today's high/low. |
+| 🕐 **Analog + digital clock** | A real ticking hand clock, accurate to the second, with a compact digital readout underneath. |
+| 📅 **Real calendar** | The actual current month, with today highlighted and one-click navigation to any other month — not a static mockup. |
+| ✅ **Checklist** | A minimal to-do list for the day's tasks. Add, check off, and delete — everything is saved automatically and survives a reload. |
+| 🔍 **Smart search bar** | Type a search term to search Google, or type a URL to go straight there — just like an address bar. |
+| 🔗 **Quick links** | One-click shortcuts to the sites you open every day (Gmail, YouTube, GitHub, and more). |
+| 💬 **Daily quote** | A short rotating line of inspiration next to the day's greeting. |
+| 🖥️ **Built for desktop** | A wide, edge-to-edge layout designed for real monitors — not a phone screen squeezed onto a big display. |
 
-## Further help
+## 🛠️ Tech stack
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **[Angular 16](https://angular.io/)** — component architecture, routing-free single dashboard shell
+- **TypeScript** — strict, typed component and service logic
+- **RxJS** — debounced city search, reactive data flow
+- **[Open-Meteo](https://open-meteo.com/)** — free weather + geocoding API, no API key
+- **[ipwho.is](https://ipwho.is/)** — free IP-based geolocation, no API key
+- **Font Awesome** + **Google Fonts (Roboto)** — icons and typography
+- **Bootstrap 5** — base utility styles
+
+## 🚀 Getting started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18+
+- [Angular CLI](https://angular.io/cli) (`npm install -g @angular/cli`)
+
+### Run it locally
+
+```bash
+# clone the repo
+git clone https://github.com/mrpaziresh/Miz.git
+cd Miz
+
+# install dependencies
+npm install
+
+# start the dev server
+npm start
+```
+
+Then open **http://localhost:4200** — the app reloads automatically as you edit source files.
+
+### Build for production
+
+```bash
+npm run build
+```
+
+Output is written to `dist/`.
+
+## 🌦️ Weather & location
+
+Miz calls two free, key-less public APIs directly from the browser:
+
+1. On first visit, your approximate city is looked up from your IP address via `ipwho.is`.
+2. Current conditions and the day's high/low come from `open-meteo.com` for that city's coordinates.
+3. Click the location label on the weather card at any time to search for and pin a different city — your choice is remembered locally, so Miz won't ask again.
+
+No sign-up, no API key, and no location data ever leaves your browser except in the request to look up the weather itself.
+
+## 📁 Project structure
+
+```
+src/app/
+├── app.component.*        # Dashboard shell — layout, greeting, quote
+├── main/                  # Weather widget (IP lookup, city search, forecast)
+├── clock/                 # Analog + digital clock
+├── calender/              # Dynamic calendar with month navigation
+├── todo/                  # Checklist widget
+├── googlesearch/          # Smart search bar
+├── quicklinks/            # Shortcut icon row
+└── weather.service.ts     # Open-Meteo + ipwho.is API client
+```
+
+## 🗺️ Roadmap
+
+- [ ] Custom, user-editable quick links
+- [ ] Theming / background picker
+- [ ] Optional login for cross-device sync
+
+Contributions and idea suggestions are welcome — open an issue or a PR.
+
+## 📄 License
+
+No license has been published for this repository yet — all rights reserved by default. Open an issue if you'd like to use this project and need clarification.

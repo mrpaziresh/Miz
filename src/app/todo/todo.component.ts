@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
+interface Task {
+  taskName: string;
+  isCompleted: boolean;
+}
+
+const STORAGE_KEY = 'miz.todo.tasks';
 
 @Component({
   selector: 'app-todo',
@@ -7,32 +13,47 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent implements OnInit {
-  taskArray = [{ taskName: 'انجام پروژه پایانی', isCompleted: true }];
+  taskArray: Task[] = [];
+  newTask = '';
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  onSubmit(form: NgForm) {
-    console.log(form);
-
-    this.taskArray.push({
-      taskName: form.controls['task'].value,
-      isCompleted: false,
-    });
-
-    form.reset();
+  ngOnInit(): void {
+    this.taskArray = this.loadTasks();
   }
 
-  onDelete(index: number) {
-    console.log(index);
+  get completedCount(): number {
+    return this.taskArray.filter((t) => t.isCompleted).length;
+  }
 
+  addTask(): void {
+    const name = this.newTask.trim();
+    if (!name) return;
+
+    this.taskArray.push({ taskName: name, isCompleted: false });
+    this.newTask = '';
+    this.saveTasks();
+  }
+
+  onDelete(index: number): void {
     this.taskArray.splice(index, 1);
+    this.saveTasks();
   }
 
-  onCheck(index: number) {
-    console.log(this.taskArray);
-
+  onCheck(index: number): void {
     this.taskArray[index].isCompleted = !this.taskArray[index].isCompleted;
+    this.saveTasks();
+  }
+
+  private loadTasks(): Task[] {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch {
+      /* ignore corrupted storage */
+    }
+    return [{ taskName: 'Finish the final project', isCompleted: false }];
+  }
+
+  private saveTasks(): void {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(this.taskArray));
   }
 }

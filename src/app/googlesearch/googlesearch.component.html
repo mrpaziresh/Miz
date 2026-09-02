@@ -1,20 +1,13 @@
-<html dir="rtl">
-  <div class="container">
-    <!-- <form
-      action="https://www.google.com/search"
-      method="get"
-      class="shape-back"
-    > -->
-    <input
-      action="https://www.google.com/search"
-      method="get"
-      type="text"
-      class="text-input"
-      placeholder=" جستجو در گوگل ..."
-      name="q"
-    />
-
-    <img src="assets/u5xicew35ps51.png" class="glogo" />
-    <!-- </form> -->
-  </div>
-</html>
+<div class="container">
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  <input
+    #searchInput
+    type="text"
+    class="text-input"
+    placeholder="Search Google or type a URL"
+    name="q"
+    autocomplete="off"
+    (keyup.enter)="search(searchInput.value)"
+  />
+  <img src="assets/u5xicew35ps51.png" class="glogo" alt="Google" (click)="search(searchInput.value)" />
+</div>

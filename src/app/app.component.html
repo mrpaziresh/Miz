@@ -1,12 +1,18 @@
-<div class="container">
-  <link rel="stylesheet" href="./app.component.css" />
-  <app-login class="log"></app-login>
+<div class="dashboard">
+  <div class="greeting">
+    <p class="greeting-text">{{ greeting }}</p>
+    <p class="greeting-date">{{ dateLabel }}</p>
+    <!-- <p class="greeting-quote">"{{ quote }}"</p> -->
+  </div>
+
+  <app-main class="weather-slot"></app-main>
+
+  <div class="search-slot">
+    <app-googlesearch></app-googlesearch>
+    <app-quicklinks></app-quicklinks>
+    <app-todo></app-todo>
+  </div>
+
+  <app-clock class="clock-slot"></app-clock>
+  <app-calender class="calendar-slot"></app-calender>
 </div>
-<app-googlesearch class="gsearch"></app-googlesearch>
-<app-todo class="todo"></app-todo>
-<div class="weather-box">
-  <app-weather class="container-box"></app-weather>
-  <app-main class="weather"></app-main>
-</div>
-<app-clock class="clock"></app-clock>
-<app-calender class="calend"></app-calender>

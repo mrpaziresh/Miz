@@ -1,54 +1,36 @@
-<div dir="rtl" class="container">
-  <h1>دست نویس</h1>
-  <hr />
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">تسک ها</th>
-        <th scope="col">وضعیت</th>
-        <th scope="col">حذف کردن</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let t of taskArray; index as i">
-        <td>{{ t.taskName }}</td>
-        <td><input (change)="onCheck(i)" id="myCheckbox" type="checkbox" /></td>
-        <td>
-          <button class="btn btn-danger btn-sm" (click)="onDelete(i)">
-            پاک کردن
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="header">
+    <h1>Checklist</h1>
+    <span class="count" *ngIf="taskArray.length">{{ completedCount }} / {{ taskArray.length }}</span>
+  </div>
 
-  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
-    <div class="form-group">
-      <input
-        type="text"
-        class="form-control"
-        style="border-color: rgb(219, 219, 219)"
-        id="task"
-        placeholder="تسک جدید بنویسید"
-        ngModel
-        name="task"
-        required
-      />
-      <small
-        *ngIf="taskForm.invalid && taskForm.dirty"
-        id="errorMessage"
-        class="form-text text-danger"
-        >حتما باید یه چیزی بنویسید</small
-      >
-    </div>
+  <ul class="task-list" *ngIf="taskArray.length; else emptyState">
+    <li class="task" *ngFor="let t of taskArray; index as i">
+      <label class="task-check">
+        <input type="checkbox" [checked]="t.isCompleted" (change)="onCheck(i)" />
+        <span class="task-name" [class.completed]="t.isCompleted">{{ t.taskName }}</span>
+      </label>
+      <button type="button" class="delete-btn" (click)="onDelete(i)" aria-label="Delete task">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </li>
+  </ul>
 
-    <button
-      [disabled]="taskForm.invalid"
-      id="submitButton"
-      type="submit"
-      class="btn btn-primary"
-    >
-      اضافه کردن
+  <ng-template #emptyState>
+    <p class="empty">No tasks yet. Add one below.</p>
+  </ng-template>
+
+  <form class="add-form" (ngSubmit)="addTask()">
+    <input
+      type="text"
+      class="add-input"
+      placeholder="Add a new task"
+      [(ngModel)]="newTask"
+      name="task"
+      autocomplete="off"
+    />
+    <button type="submit" class="add-btn" [disabled]="!newTask.trim()" aria-label="Add task">
+      <i class="fa-solid fa-plus"></i>
     </button>
   </form>
 </div>

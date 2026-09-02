@@ -1,9 +1,35 @@
-.wrapper {
-  height: 100vh;
-  width: 100%;
+:host {
+  display: block;
+}
 
-  font-family: 'Dana', sans-serif;
-  float: right;
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.clock-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.wrapper {
+  position: relative;
+  width: 292px;
+  max-width: 100%;
+  height: 280px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.digital-time {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 14px;
+  border-radius: 20px;
 }
 
 #clock {
@@ -15,23 +41,11 @@
   -webkit-backdrop-filter: blur(9.5px);
   border: 18px rgba(255, 255, 255, 0.31);
   border-radius: 16px;
-  position: fixed;
+  position: absolute;
 
   box-shadow: inset 0 5x 25px #00000080, 0 5x 25px #00000080,
     0 5x 30px #00000080, 0 5x 35px #00000080, 0 5x 35px #00000080,
     0 5x 35px #00000080;
-}
-
-#clock::before {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  left: -10f8px;
-  top: -10px;
-
-  border-radius: 50%;
-  z-index: -2;
 }
 
 #clock::after {
@@ -40,18 +54,16 @@
   height: 15px;
   background: #c7d8f8;
   position: absolute;
-  top: 130px;
-  left: 140px;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 7.5px);
   border-radius: 50%;
-  /* left: calc(50% - 9px);
-  top: calc(50% - 9px); */
+  z-index: 1;
   box-shadow: 0 2px 4px #00000026;
 }
 
 #clock li {
   list-style: none;
   position: absolute;
-  left: 12px;
 }
 
 .numbers {
@@ -158,68 +170,63 @@
   transform: rotate(-330deg);
 }
 
+/*
+ * Each hand's ::after is anchored so that most of its length extends
+ * ABOVE the face center (with a short tail below) — that way rotate(0deg)
+ * on the parent <li> points to 12 o'clock, matching the JS rotation math
+ * in clock.component.ts (0deg = 12:00). Rotation itself is applied purely
+ * via the JS-computed inline transform on the <li> — no CSS animation here,
+ * since an animation on the same property would fight the inline style and
+ * spin independently of the real time.
+ */
+
 #second {
   width: 100%;
   height: 100%;
-  animation: sec 60s steps(60, end) infinite;
 }
 
 #second::after {
   content: "";
-  width: 4px;
-  height: 107px;
+  width: 3px;
+  height: 132px;
   border-radius: 2px;
   background-color: #fd2e62;
   position: absolute;
-  left: calc(50% - 8px);
-  top: 55px;
+  left: calc(50% - 1.5px);
+  top: calc(50% - 108px);
   box-shadow: 1px 2px 3px #00000026;
 }
 
 #minute {
   width: 100%;
   height: 100%;
-  animation: sec 3600s steps(60, end) infinite;
 }
 
 #minute::after {
   content: "";
-  width: 8px;
-  height: 79px;
-  border-radius: 4px 4px 2px 2px;
+  width: 6px;
+  height: 104px;
+  border-radius: 3px 3px 2px 2px;
   background: #bed4fd;
   position: absolute;
-  left: calc(50% + 30px);
-  top: 27%;
-  transform: rotate(-120deg);
+  left: calc(50% - 3px);
+  top: calc(50% - 86px);
   box-shadow: -1px 0 5px #ac0a0a26;
 }
 
 #hour {
   width: 100%;
   height: 100%;
-  transform: rotate(120deg);
 }
 
 #hour::after {
   content: "";
-  width: 12px;
-  height: 65px;
-  border-radius: 6px 6px 3px 3px;
+  width: 9px;
+  height: 68px;
+  border-radius: 4px 4px 2px 2px;
   background: #07f3dfb4;
   position: absolute;
-  left: calc(50% - 4px);
-  top: 50%;
+  left: calc(50% - 4.5px);
+  top: calc(50% - 56px);
   box-shadow: 1px 0 4px #00000026;
-}
-
-@keyframes sec {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.box {
-  position: absolute;
-  left: 1010px;
 }
